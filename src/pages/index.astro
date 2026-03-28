@@ -182,7 +182,7 @@ const statusBadge: Record<string, string> = {
             href={`/kebijakan/${policy.id}`}
             class="flex items-start gap-4 px-5 py-4 hover:bg-paper-50 transition-colors group"
           >
-            <div class="flex-shrink-0 pt-0.5 w-20">
+            <div class="shrink-0 pt-0.5 w-20">
               <span class={typeBadge[policy.type]}>{policy.type}</span>
             </div>
             <div class="flex-1 min-w-0">
@@ -196,7 +196,7 @@ const statusBadge: Record<string, string> = {
                 {policy.summary}
               </p>
             </div>
-            <div class="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5 pt-0.5">
+            <div class="shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5 pt-0.5">
               <span class="text-ink-300 text-xs font-mono">{policy.year}</span>
               <span class={statusBadge[policy.status]}>{policy.status}</span>
             </div>

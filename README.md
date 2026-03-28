@@ -2,7 +2,7 @@
 
 Kastau adalah platform kebijakan publik Kabupaten Jayapura — menyajikan peraturan daerah, peraturan bupati, dan SK Bupati dalam bahasa yang mudah dipahami oleh warga.
 
-**Web:** [kastau.id](https://kastau.id)
+**Web:** [kastau.pages.dev](https://kastau.pages.dev)
 
 ## Fitur
 
