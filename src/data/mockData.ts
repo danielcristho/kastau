@@ -21,16 +21,16 @@ export interface Policy {
 }
 
 export const categories: Category[] = [
-  { slug: 'infrastruktur',       name: 'Infrastruktur',        description: 'Jalan, jembatan, air bersih, dan fasilitas publik',           icon: 'infrastruktur',       policyCount: 42 },
-  { slug: 'pendidikan',          name: 'Pendidikan',            description: 'Sekolah, beasiswa, dan kurikulum daerah',                     icon: 'pendidikan',          policyCount: 38 },
-  { slug: 'kesehatan',           name: 'Kesehatan',             description: 'Puskesmas, BPJS, dan program kesehatan ibu dan anak',         icon: 'kesehatan',           policyCount: 31 },
-  { slug: 'lingkungan-hidup',    name: 'Lingkungan Hidup',      description: 'Hutan, sungai, limbah, dan konservasi alam',                  icon: 'lingkungan-hidup',    policyCount: 27 },
-  { slug: 'ekonomi-umkm',        name: 'Ekonomi & UMKM',        description: 'Usaha kecil, perizinan, pasar, dan investasi',               icon: 'ekonomi-umkm',        policyCount: 24 },
-  { slug: 'pertanian-perikanan', name: 'Pertanian & Perikanan', description: 'Nelayan, petani, penyuluhan, dan hasil bumi',                 icon: 'pertanian-perikanan', policyCount: 22 },
-  { slug: 'adat-budaya',         name: 'Adat & Budaya',         description: 'Hak ulayat, seni budaya, dan perlindungan adat',             icon: 'adat-budaya',         policyCount: 19 },
-  { slug: 'pariwisata',          name: 'Pariwisata',            description: 'Destinasi wisata, promosi, dan infrastruktur pariwisata',     icon: 'pariwisata',          policyCount: 17 },
-  { slug: 'tata-ruang',          name: 'Tata Ruang',            description: 'RTRW, izin bangunan, dan perencanaan wilayah',               icon: 'tata-ruang',          policyCount: 15 },
-  { slug: 'hukum-peraturan',     name: 'Hukum & Peraturan',     description: 'Regulasi umum, ketertiban, dan pemerintahan',                icon: 'hukum-peraturan',     policyCount: 49 },
+  { slug: 'infrastruktur', name: 'Infrastruktur', description: 'Jalan, jembatan, air bersih, dan fasilitas publik', icon: 'infrastruktur', policyCount: 42 },
+  { slug: 'pendidikan', name: 'Pendidikan', description: 'Sekolah, beasiswa, dan kurikulum daerah', icon: 'pendidikan', policyCount: 38 },
+  { slug: 'kesehatan', name: 'Kesehatan', description: 'Puskesmas, BPJS, dan program kesehatan ibu dan anak', icon: 'kesehatan', policyCount: 31 },
+  { slug: 'lingkungan-hidup', name: 'Lingkungan Hidup', description: 'Hutan, sungai, limbah, dan konservasi alam', icon: 'lingkungan-hidup', policyCount: 27 },
+  { slug: 'ekonomi-umkm', name: 'Ekonomi & UMKM', description: 'Usaha kecil, perizinan, pasar, dan investasi', icon: 'ekonomi-umkm', policyCount: 24 },
+  { slug: 'pertanian-perikanan', name: 'Pertanian & Perikanan', description: 'Nelayan, petani, penyuluhan, dan hasil bumi', icon: 'pertanian-perikanan', policyCount: 22 },
+  { slug: 'adat-budaya', name: 'Adat & Budaya', description: 'Hak ulayat, seni budaya, dan perlindungan adat', icon: 'adat-budaya', policyCount: 19 },
+  { slug: 'pariwisata', name: 'Pariwisata', description: 'Destinasi wisata, promosi, dan infrastruktur pariwisata', icon: 'pariwisata', policyCount: 17 },
+  { slug: 'tata-ruang', name: 'Tata Ruang', description: 'RTRW, izin bangunan, dan perencanaan wilayah', icon: 'tata-ruang', policyCount: 15 },
+  { slug: 'hukum-peraturan', name: 'Hukum & Peraturan', description: 'Regulasi umum, ketertiban, dan pemerintahan', icon: 'hukum-peraturan', policyCount: 49 },
 ];
 
 export const policies: Policy[] = [
@@ -190,6 +190,110 @@ export const policies: Policy[] = [
     detail: 'Dinas Pendidikan diwajibkan menyusun bahan ajar muatan lokal bersama tokoh adat dalam 2 tahun sejak pengesahan. Guru muatan lokal dapat direkrut dari masyarakat adat tanpa mensyaratkan ijazah S1 pendidikan.',
     documentUrl: '#',
   },
+  {
+    id: 13,
+    number: 'Perda No. 2 Tahun 2024',
+    title: 'Pertanggungjawaban Pelaksanaan APBD Tahun Anggaran 2023',
+    category: 'hukum-peraturan',
+    year: 2024,
+    date: '30 Juli 2024',
+    status: 'berlaku',
+    type: 'Perda',
+    summary: 'Menetapkan laporan realisasi APBD Tahun Anggaran 2023 sebagai bentuk akuntabilitas pemerintah daerah.',
+    detail: 'Dokumen ini berisi laporan keuangan pemerintah daerah yang telah diaudit dan menjadi dasar evaluasi fiskal daerah.',
+    documentUrl: 'https://peraturan.bpk.go.id/Details/338593'
+  },
+  {
+    id: 14,
+    number: 'Perbup No. 25 Tahun 2024',
+    title: 'Perubahan Penjabaran APBD Tahun Anggaran 2024',
+    category: 'hukum-peraturan',
+    year: 2024,
+    date: '15 September 2024',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Mengatur perubahan alokasi anggaran pada APBD 2024.',
+    detail: 'Perubahan dilakukan untuk menyesuaikan kebutuhan pembangunan daerah dan kondisi fiskal.',
+    documentUrl: 'https://peraturan.bpk.go.id/Details/336693'
+  },
+  {
+    id: 15,
+    number: 'Perbup No. 31 Tahun 2024',
+    title: 'Perubahan Kedua atas Penjabaran APBD Tahun Anggaran 2024',
+    category: 'hukum-peraturan',
+    year: 2024,
+    date: '10 Desember 2024',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Penyesuaian lanjutan APBD 2024.',
+    detail: 'Digunakan untuk optimalisasi anggaran di akhir tahun.',
+    documentUrl: 'https://peraturan.bpk.go.id/Details/338598'
+  },
+  {
+    id: 16,
+    number: 'Perda No. 1 Tahun 2025',
+    title: 'Rencana Tata Ruang Wilayah (RTRW) Kabupaten Jayapura',
+    category: 'tata-ruang',
+    year: 2025,
+    date: '18 Februari 2025',
+    status: 'berlaku',
+    type: 'Perda',
+    summary: 'Pedoman tata ruang wilayah Kabupaten Jayapura.',
+    detail: 'Mengatur zonasi kawasan lindung, budidaya, dan pengembangan wilayah strategis.',
+    documentUrl: 'https://jayapurakab.go.id/rtrw-kab-jayapura-2025/'
+  },
+  {
+    id: 17,
+    number: 'Perbup No. 28 Tahun 2025',
+    title: 'Standar Harga Satuan Pemerintah Kabupaten Jayapura',
+    category: 'hukum-peraturan',
+    year: 2025,
+    date: '12 Juni 2025',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Standar harga barang dan jasa pemerintah daerah.',
+    detail: 'Digunakan sebagai acuan dalam penyusunan anggaran OPD.',
+    documentUrl: 'https://jayapurakab.go.id/perbub-nomor-28-tahun-2025-tentang-standar-harga-satuan/'
+  },
+  {
+    id: 18,
+    number: 'Perbup No. 31 Tahun 2025',
+    title: 'Analisis Standar Belanja Konstruksi',
+    category: 'infrastruktur',
+    year: 2025,
+    date: '20 Agustus 2025',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Standar biaya proyek konstruksi daerah.',
+    detail: 'Menjadi acuan perencanaan dan penganggaran proyek fisik.',
+    documentUrl: 'https://jayapurakab.go.id/category/peraturan-bupati/'
+  },
+  {
+    id: 19,
+    number: 'Perbup No. 33 Tahun 2025',
+    title: 'Standar Biaya Umum Pemerintah Daerah',
+    category: 'hukum-peraturan',
+    year: 2025,
+    date: '5 Oktober 2025',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Standar biaya operasional pemerintah.',
+    detail: 'Mengatur perjalanan dinas, honorarium, dan kegiatan operasional.',
+    documentUrl: 'https://jayapurakab.go.id/category/peraturan-bupati/'
+  },
+  {
+    id: 20,
+    number: 'Perbup No. 29 Tahun 2026',
+    title: 'Harga Satuan Pokok Kegiatan Tahun Anggaran 2026',
+    category: 'hukum-peraturan',
+    year: 2026,
+    date: '10 Januari 2026',
+    status: 'berlaku',
+    type: 'Perbup',
+    summary: 'Harga satuan kegiatan untuk tahun anggaran 2026.',
+    detail: 'Digunakan dalam seluruh proses perencanaan anggaran daerah.',
+    documentUrl: 'https://jayapurakab.go.id/category/peraturan-bupati/'
+  }
 ];
 
 export const stats = {
