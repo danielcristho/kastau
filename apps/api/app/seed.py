@@ -304,3 +304,12 @@ def seed_db() -> None:
         db.commit()
     finally:
         db.close()
+
+
+if __name__ == "__main__":
+    from app.database import engine, Base
+    print("Creating tables...")
+    Base.metadata.create_all(bind=engine)
+    print("Seeding database...")
+    seed_db()
+    print("Done!")

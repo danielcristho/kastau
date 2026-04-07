@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "bash scripts/dev.sh",
-    "build": "echo 'Python — no build step required'"
+    "seed": "uv run python -m app.seed",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d --build",
+    "docker:seed": "docker exec -it kastau-api python -m app.seed"
   }
 }
