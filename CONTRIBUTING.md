@@ -32,10 +32,36 @@ pnpm dev
 
 # Atau per app
 pnpm --filter @kastau/web dev    # Astro  → http://localhost:4321
-pnpm --filter @kastau/api dev    # FastAPI → http://localhost:8000
+pnpm --filter @kastau/api dev    # FastAPI (SQLite) → http://localhost:8000
+
+# Menjalankan API dengan PostgreSQL
+pnpm --filter @kastau/api dev:pg # Otomatis menyalakan Docker DB + API
+
+# Melakukan Seeding ke Database
+pnpm --filter @kastau/api db:seed
 ```
 
 FastAPI akan otomatis membuat `.venv` dan menginstall dependencies Python saat pertama kali dijalankan.
+
+## Database
+
+Secara default, API menggunakan **SQLite** untuk kemudahan development lokal. Data disimpan di `apps/api/kastau.db`.
+
+Jika ingin menggunakan **PostgreSQL**:
+1. Salin `apps/api/.env.example` menjadi `apps/api/.env`
+2. Atur koneksi database:
+   * **Opsi A**: Gunakan variabel individu (DB_USER, DB_PASS, DB_HOST, DB_NAME).
+   * **Opsi B**: Gunakan variabel tunggal `DATABASE_URL`.
+   * Contoh:
+     ```env
+     DB_USER=postgres
+     DB_PASS=postgres
+     DB_HOST=localhost
+     DB_NAME=kastau
+     ```
+3. Restart server API.
+
+Jika menggunakan Docker, PostgreSQL sudah dikonfigurasi otomatis di `apps/api/docker/docker-compose.yml`.
 
 ## Struktur Proyek
 
