@@ -46,7 +46,7 @@ async def root():
 @app.get("/health")
 async def health(db: Session = Depends(get_db)):
     try:
-        # Check database connection
+        # Check postgres connection
         db.execute(text("SELECT 1"))
         return {"status": "ok", "database": "up"}
     except Exception as e:
