@@ -5,8 +5,14 @@
   "scripts": {
     "dev": "bash scripts/dev.sh",
     "seed": "uv run python -m app.seed",
+    "migration": "uv run alembic upgrade head",
+    "migration:create": "uv run alembic revision --autogenerate -m",
     "docker:down": "docker compose -f docker/docker-compose.yml down",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d --build",
-    "docker:seed": "docker exec -it kastau-api python -m app.seed"
+    "docker:rm": "docker compose -f docker/docker-compose.yml down -v",
+    "docker:seed": "docker exec -it kastau-api python -m app.seed",
+    "db:exec": "docker exec -it kastau-db psql -U postgres -d kastau",
+    "docker:migration": "docker exec -it kastau-api alembic upgrade head",
+    "docker:migration:create": "docker exec -it kastau-api alembic revision --autogenerate -m"
   }
 }

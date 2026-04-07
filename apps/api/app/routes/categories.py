@@ -8,10 +8,15 @@ from app.models.policy import Policy
 from app.schemas.category import CategoryRead, CategoryWithPolicies
 from app.schemas.policy import PolicyRead
 
-router = APIRouter(prefix="/api/v1/categories", tags=["categories"])
+router = APIRouter(prefix="/api/v1/categories", tags=["Kategori"])
 
 
-@router.get("", response_model=list[CategoryRead])
+@router.get(
+    "",
+    response_model=list[CategoryRead],
+    summary="Daftar Kategori Kebijakan",
+    description="Mengambil semua kategori kebijakan yang tersedia (seperti Pendidikan, Kesehatan, dll) beserta jumlah peraturan di setiap kategori.",
+)
 def list_categories(db: Session = Depends(get_db)):
     categories = db.query(Category).all()
     result = []
@@ -33,11 +38,16 @@ def list_categories(db: Session = Depends(get_db)):
     return result
 
 
-@router.get("/{slug}", response_model=CategoryWithPolicies)
+@router.get(
+    "/{slug}",
+    response_model=CategoryWithPolicies,
+    summary="Detail Kategori dan Kebijakan Terkait",
+    description="Mengambil satu kategori spesifik beserta daftar kebijakan yang termasuk di dalamnya.",
+)
 def get_category(slug: str, db: Session = Depends(get_db)):
     cat = db.query(Category).filter(Category.slug == slug).first()
     if not cat:
-        raise HTTPException(status_code=404, detail="Category not found")
+        raise HTTPException(status_code=404, detail="Kategori tidak ditemukan")
 
     policies = db.query(Policy).filter(Policy.category == slug).all()
 

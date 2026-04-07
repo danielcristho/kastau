@@ -21,6 +21,10 @@ app = FastAPI(
     title="Kastau API",
     version="0.1.0",
     description="REST API untuk platform kebijakan daerah Kabupaten Jayapura",
+    license_info={
+        "name": "GNU AGPL v3",
+        "url": "https://www.gnu.org/licenses/agpl-3.0.html",
+    },
     lifespan=lifespan,
 )
 
