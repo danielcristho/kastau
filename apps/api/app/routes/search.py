@@ -6,12 +6,17 @@ from app.database import get_db
 from app.models.policy import Policy
 from app.schemas.policy import PolicyRead
 
-router = APIRouter(prefix="/api/v1/search", tags=["search"])
+router = APIRouter(prefix="/api/v1/search", tags=["Kebijakan"])
 
 
-@router.get("", response_model=list[PolicyRead])
+@router.get(
+    "",
+    response_model=list[PolicyRead],
+    summary="Pencarian Kebijakan",
+    description="Mencari kebijakan berdasarkan teks pada judul, nomor peraturan, ringkasan, atau isi detail kebijakan.",
+)
 def search_policies(
-    q: str = Query(..., min_length=1, description="Search query"),
+    q: str = Query(..., min_length=1, description="Kata kunci pencarian"),
     db: Session = Depends(get_db),
 ):
     results = (

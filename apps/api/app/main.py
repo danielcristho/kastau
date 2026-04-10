@@ -1,9 +1,11 @@
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
+from sqlalchemy.orm import Session
 
-from app.database import Base, engine
+from app.database import Base, engine, get_db
 from app.routes import categories, policies, search, stats
 
 
@@ -19,6 +21,10 @@ app = FastAPI(
     title="Kastau API",
     version="0.1.0",
     description="REST API untuk platform kebijakan daerah Kabupaten Jayapura",
+    license_info={
+        "name": "GNU AGPL v3",
+        "url": "https://www.gnu.org/licenses/agpl-3.0.html",
+    },
     lifespan=lifespan,
 )
 
@@ -42,5 +48,10 @@ async def root():
 
 
 @app.get("/health")
-async def health():
-    return {"status": "ok"}
+async def health(db: Session = Depends(get_db)):
+    try:
+        # Check postgres connection
+        db.execute(text("SELECT 1"))
+        return {"status": "ok", "database": "up"}
+    except Exception as e:
+        return {"status": "error", "database": "down", "message": str(e)}, 503
